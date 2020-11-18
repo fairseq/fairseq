@@ -5,7 +5,7 @@
 """isort:skip_file"""
 
 __all__ = ["pdb"]
-__version__ = "0.10.0"
+__version__ = "0.0.5"
 
 import sys
 

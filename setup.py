@@ -127,6 +127,11 @@ if "clean" in sys.argv[1:]:
     )
 
 
+extra_packages = []
+if os.path.exists(os.path.join("fairseq", "model_parallel", "megatron", "mpu")):
+    extra_packages.append("fairseq.model_parallel.megatron.mpu")
+
+
 def do_setup(package_data):
     setup(
         name="fairseq",
@@ -150,7 +155,6 @@ def do_setup(package_data):
             "cffi",
             "cython",
             "dataclasses",
-            "editdistance",
             "hydra-core",
             "numpy",
             "regex",
@@ -168,7 +172,7 @@ def do_setup(package_data):
                 "tests",
                 "tests.*",
             ]
-        ) + ["fairseq.model_parallel.megatron.mpu"],
+        ) + extra_packages,
         package_data=package_data,
         ext_modules=extensions,
         test_suite="tests",

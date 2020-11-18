@@ -130,7 +130,7 @@ if "clean" in sys.argv[1:]:
 def do_setup(package_data):
     setup(
         name="fairseq",
-        version="0.10.0",
+        version="0.0.6",
         description="Facebook AI Research Sequence-to-Sequence Toolkit",
         url="https://github.com/pytorch/fairseq",
         classifiers=[
